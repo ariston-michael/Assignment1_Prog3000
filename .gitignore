@@ -1,0 +1,24 @@
+# Build output
+bin/
+obj/
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Rider / JetBrains
+.idea/
+*.iml
+riderModule.iml
+_ReSharper.Caches/
+*.DotSettings.user
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
