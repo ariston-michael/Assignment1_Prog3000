@@ -1,0 +1,68 @@
+@model Assignment1_EquipmentTool.Models.EquipmentRequest
+
+@{
+    ViewData["Title"] = "Request Form";
+}
+
+<h1>Equipment Request Form</h1>
+
+<form asp-action="Index" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Role" class="form-label"></label>
+        <select asp-for="Role" class="form-select">
+            <option value="">Please select your role</option>
+            <option value="Student">Student</option>
+            <option value="Professor">Professor</option>
+        </select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="EquipmentType" class="form-label"></label>
+        <select asp-for="EquipmentType"
+                asp-items="Html.GetEnumSelectList<Assignment1_EquipmentTool.Models.EquipmentType>()"
+                class="form-select">
+            <option value="">Please select the device type</option>
+        </select>
+        <span asp-validation-for="EquipmentType" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="RequestDetails" class="form-label"></label>
+        <textarea asp-for="RequestDetails" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="RequestDetails" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Duration" class="form-label"></label>
+        <input asp-for="Duration" class="form-control" />
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Submit Request
+    </button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
