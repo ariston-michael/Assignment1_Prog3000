@@ -1,0 +1,33 @@
+@model IEnumerable<Assignment1_EquipmentTool.Models.EquipmentRequest>
+
+@{
+    ViewData["Title"] = "Requests";
+}
+
+<h1>Equipment Requests</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Equipment Type</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var request in Model)
+    {
+        <tr>
+            <td>@request.EquipmentType</td>
+            <td>@request.Name</td>
+            <td>@request.Role</td>
+            <td>
+                <button class="btn btn-success btn-sm">Accept</button>
+                <button class="btn btn-danger btn-sm">Deny</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

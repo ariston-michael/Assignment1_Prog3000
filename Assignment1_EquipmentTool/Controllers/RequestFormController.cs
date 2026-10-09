@@ -26,4 +26,10 @@ public class RequestFormController : Controller
     {
         return View();
     }
+
+    [Route("Requests")]
+    public IActionResult Requests()
+    {
+        return View(Repository.Requests);
+    }
 }
